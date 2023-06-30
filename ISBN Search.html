@@ -8,40 +8,40 @@
 <body>
   
   <form action="javascript:void(0);">
+    <br><br>
     <label for="inputField">Enter a ISBN:</label>
+    <br><br>
     <input type="text" onfocus="this.value=''" id="inputField" placeholder="Enter a value" required>
     <!-- The button used to copy the text -->
     <button onclick="copyText()">Copy</button>
     <br>
     <label id="lableField"><b></b></label>
     <ul>
-      <li><button type="button" onclick="openWebsite1()">Book Finder</button></li>
-      <br>
-      <li><button type="button" onclick="openWebsite14()">Our Koha</button></li>
-      <br>
-      <li><button type="button" onclick="openWebsite2()">LC Catalog</button></li>
-      <br>
-      <li><button type="button" onclick="openWebsite13()">DDC</button></li>
-      <br>
-      <li><button type="button" onclick="openWebsite3()">UCLA | UC Library</button></li>
-      <br>
-      <li><button type="button" onclick="openWebsite7()">World Cat</button></li>
-      <br>
-      <li><button type="button" onclick="openWebsite5()">kohas</button></li>
-      <br>
-      <li><button type="button" onclick="openWebsite4()">google books</button></li>
-      <br>
-      <li><button type="button" onclick="openWebsite6()">ISBN Finder</button></li>
-      <br>
-      <li><button type="button" onclick="openWebsite8()">Amazon</button></li>
-      <br>
-      <li><button type="button" onclick="openWebsite9()">Abe Books</button></li>
-      <br>
-      <li><button type="button" onclick="openWebsite10()">Google</button></li>
-      <br>
-      <li><button type="button" onclick="openWebsite11()">protoporia.gr</button></li>
-      <br>
-      <li><button type="button" onclick="openWebsite12()">metabook.gr</button></li>
+      <p><br><br><li><button type="button" onclick="openWebsite1()">Book Finder</button>
+          <button type="button" onclick="openWebsite6()">ISBN Finder</button>
+          <button type="button" onclick="openWebsite8()">Amazon</button>
+          <button type="button" onclick="openWebsite9()">Abe Books</button></li></p>
+      
+
+      <p><br>
+      <li><button type="button" onclick="openWebsite14()">Our Koha</button></li></p>
+
+      <p><br>
+      <li><button type="button" onclick="openWebsite7()">World Cat</button>
+         <button type="button" onclick="openWebsite3()">UCLA | UC Library</button>
+         <button type="button" onclick="openWebsite13()">DDC</button>
+         <button type="button" onclick="openWebsite5()">kohas</button></li></p>
+
+      <p><br>
+      <li><button type="button" onclick="openWebsite11()">protoporia.gr</button>
+          <button type="button" onclick="openWebsite12()">metabook.gr</button></li></p>
+
+      <p><br><li><button type="button" onclick="openWebsite10()">Google</button>
+          <button type="button" onclick="openWebsite4()">google books</button></li></p><br>
+      
+      <p><li><button type="button" onclick="openWebsite2()">LC Catalog</button>
+          <button type="button" onclick="openWebsite15()">www.bnf.fr</button></li></p><br>
+      
     </ul>
   </form>
 
@@ -208,11 +208,16 @@
       var value = document.getElementById("inputField").value;
       openWebsite("http://192.168.5.218:8080/cgi-bin/koha/catalogue/search.pl?q=" + value + "&startRec=0");
     }
+    function openWebsite15() {
+      var value = document.getElementById("inputField").value;
+      openWebsite("https://catalogue.bnf.fr");
+    }
+
     function copyText() {
     // Get the text field
       var value = document.getElementById("inputField").value;
 
-      // // Select the text field
+      // Select the text field
       // copyText.select();
       // copyText.setSelectionRange(0, 99999); // For mobile devices
 
