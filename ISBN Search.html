@@ -1,151 +1,243 @@
 <!DOCTYPE html>
 <html>
 
+<style>
+  .blackStile {
+    background-color: black;
+    color: white
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin: 10px;
+    border: 3px solid green;
+  }
+
+  .labeledmarc {
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border: 3px solid green;
+  }
+
+  .red {
+    color: red;
+  }
+
+  .green{
+    color: green;
+  }
+
+</style>
+
 <head>
   <title>ISBN Search</title>
 </head>
 
-<body>
-  
+<body class="blackStile">
+
   <form action="javascript:void(0);">
-    <br><br>
-    <label for="inputField">Enter a ISBN:</label>
-    <br><br>
-    <input type="text" onfocus="this.value=''" id="inputField" placeholder="Enter a value" required>
-    <!-- The button used to copy the text -->
-    <button onclick="copyText()">Copy</button>
-    <br>
-    <label id="lableField"><b></b></label>
+
+
+    <div class="center">
+      <br><br>
+      <label for="inputField">Enter a ISBN: </label>
+      <br><br>
+      <input class="center" type="text" onfocus="this.value=''" id="inputField" placeholder="Enter a value" required>
+      <button onclick="copyText()">Copy</button>
+      <br>
+      <label id="lableField"><b></b></label>
+    </div>
+
+
     <ul>
-      <p><br><br><li><button type="button" onclick="openWebsite1()">Book Finder</button>
-          <button type="button" onclick="openWebsite6()">ISBN Finder</button>
-          <button type="button" onclick="openWebsite8()">Amazon</button>
-          <button type="button" onclick="openWebsite9()">Abe Books</button></li></p>
-      
 
-      <p><br>
-      <li><button type="button" onclick="openWebsite14()">Our Koha</button></li></p>
+      <div class="center">
+        <p><br><br>
+          <li><button type="button" onclick="openWebsite1()">Book Finder</button>
+            <button type="button" onclick="openWebsite6()">ISBN Finder</button>
+            <button type="button" onclick="openWebsite8()">Amazon</button>
+            <button type="button" onclick="openWebsite9()">Abe Books</button>
+          </li>
+        </p>
+      </div>
 
-      <p><br>
-      <li><button type="button" onclick="openWebsite7()">World Cat</button>
-         <button type="button" onclick="openWebsite3()">UCLA | UC Library</button>
-         <button type="button" onclick="openWebsite13()">DDC</button>
-         <button type="button" onclick="openWebsite5()">kohas</button></li></p>
+      <div class="center">
+        <p><br>
+          <li><button type="button" onclick="openWebsite14()">Our Koha</button></li>
+        </p>
+      </div>
 
-      <p><br>
-      <li><button type="button" onclick="openWebsite11()">protoporia.gr</button>
-          <button type="button" onclick="openWebsite12()">metabook.gr</button></li></p>
+      <div class="center">
+        <p><br>
+          <li><button type="button" onclick="openWebsite7()">World Cat</button>
+            <button type="button" onclick="openWebsite3()">UCLA | UC Library</button>
+            <button type="button" onclick="openWebsite13()">DDC</button>
+            <button type="button" onclick="openWebsite5()">kohas</button>
+          </li>
+        </p>
+      </div>
 
-      <p><br><li><button type="button" onclick="openWebsite10()">Google</button>
-          <button type="button" onclick="openWebsite4()">google books</button></li></p><br>
-      
-      <p><li><button type="button" onclick="openWebsite2()">LC Catalog</button>
-          <button type="button" onclick="openWebsite15()">www.bnf.fr</button></li></p><br>
-      
+      <div class="center">
+        <p><br>
+          <li><button type="button" onclick="openWebsite11()">protoporia.gr</button>
+            <button type="button" onclick="openWebsite12()">metabook.gr</button>
+          </li>
+        </p>
+      </div>
+
+      <div class="center">
+        <p><br>
+          <li><button type="button" onclick="openWebsite10()">Google</button>
+            <button type="button" onclick="openWebsite16()">Google image</button>
+            <button type="button" onclick="openWebsite4()">google books</button>
+          </li>
+        </p><br>
+      </div>
+
+      <div class="center">
+        <p>
+          <li><button type="button" onclick="openWebsite2()">LC Catalog</button>
+            <button type="button" onclick="openWebsite15()">www.bnf.fr</button>
+            <button type="button" onclick="openWebsite17()">LCC SRU</button>
+          </li>
+        </p><br>
+      </div>
+
     </ul>
   </form>
 
-  <div id="labeledmarc">                      
-                                    
-    <p>
-      <b>
-        000 - LEADER
-      </b>
-    </p>   
-    
-    <p>
-      <b>003  - CONTROL NUMBER IDENTIFIER: </b>
-      <ul>
-        <li>control field</li>
-        <br><b>Philips University</b></br>
-      </ul>
-    </p>
+  <div id="labeledmarc" class="labeledmarc">
 
-    
     <p>
-      <b>020  - ISBN</b>
-      <ul>
-        <li>International Standard Book Number</li>
-      </ul>
-    </p>
-    
-    <p>
-      <b>040  - CATALOGING SOURCE</b>
-      <ul>
-        <li>Language of cataloging</li>
-        <li>Transcribing agency</li>
-        <b>Philips University</b></br>
-      </ul>
+      <b class="red">* 000 -</b>
+      <b> LEADER</b>
     </p>
 
     <p>
-      <b>082  - DEWEY DECIMAL CLASSIFICATION NUMBER</b>
-      <ul>
-        <li>Classification number</li>
-      </ul>
+      <b class="red">* 003 -</b>
+      <b> CONTROL NUMBER IDENTIFIER: </b>
+    <ul>
+      <li>control field</li>
+      <br><b>Philips University</b>
+      <button onclick="copyText2()">Copy</button>
+      </br>
+    </ul>
     </p>
 
     <p>
-      <b>100  - MAIN ENTRY--PERSONAL NAME</b>
-      <ul>
-        <li>Personal name</li>
-      </ul>
+      <b class="red">* 005 -</b>
+      <b> DATE AND TIME OF LATEST TRANSACTION</b>
+  </p>
+
+    <p>
+      <b class="red">* 008 -</b>
+      <b> FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION</b>
     </p>
 
     <p>
-      <b>245  - TITLE STATEMENT</b>
-      <ul>
-        <li>Title</li>
-        <li>Statement of responsibility, etc. Author</li>
-      </ul>
+      <b>020 - ISBN</b>
+    <ul>
+      <li>International Standard Book Number</li>
+    </ul>
     </p>
 
     <p>
-      <b>250  - EDITION STATEMENT</b>
-      <ul>
-        <li>Edition statement</li>
-      </ul>
+      <b>040 - CATALOGING SOURCE</b>
+    <ul>
+      <li>Language of cataloging</li>
+      <li>Transcribing agency</li>
+      <b>Philips University</b></br>
+    </ul>
     </p>
-        
+
+    <p>
+      <b>041 - LANGUAGE CODE</b>
+    </p>
+
+    <p>
+      <b>082 - DEWEY DECIMAL CLASSIFICATION NUMBER</b>
+    <ul>
+      <li>Classification number</li>
+    </ul>
+    </p>
+
+    <p>
+      <b>100 - MAIN ENTRY--PERSONAL NAME</b>
+    <ul>
+      <li>Personal name</li>
+    </ul>
+    </p>
+
+    <p>
+      <b>245 - TITLE STATEMENT</b>
+    <ul>
+      <li>Title</li>
+      <li>Statement of responsibility, etc. Author</li>
+    </ul>
+    </p>
+
+    <p>
+      <b>250 - EDITION STATEMENT</b>
+    <ul>
+      <li>Edition statement</li>
+    </ul>
+    </p>
+
     <p>
       <b>260 - PUBLICATION, DISTRIBUTION, ETC</b>
-      <ul>
-        <li>Name of publisher, distributor, etc.</li>
-        <li>lace of publication, distribution, etc.</li>
-        <li>Date of publication, distribution, etc</li>
-      </ul>
+    <ul>
+      <li>Name of publisher, distributor, etc.</li>
+      <li>lace of publication, distribution, etc.</li>
+      <li>Date of publication, distribution, etc</li>
+    </ul>
     </p>
-        
+
     <p>
       <b>300 - PHYSICAL DESCRIPTION</b>
-      <ul>
-        <li>Extent</li>
-        <li>Dimensions</li>
-      </ul>
+    <ul>
+      <li>Extent</li>
+      <li>Dimensions</li>
+    </ul>
     </p>
-    
+
+    <p>
+      <b class="green">500-541 -</b> <b> NOTE</b>
+      <ol>
+        <li><b class="green">500 -</b><b> GENERAL NOTE</b></li>
+        <li><b class="green">504 -</b><b> BIBLIOGRAPHY NOTE</b></li>
+        <li><b class="green">505 -</b><b> CONTENTS NOTE</b></li>
+        <li><b class="green">520 -</b><b> SUMMARY NOTE</b></li>
+        <li><b class="green">546 -</b><b> LANGUAGE NOTE</b></li>
+      </ol>
+    </p>
+
     <p>
       <b>650 - SUBJECT ADDED ENTRY--TOPICAL TERM</b>
-      <ul>
-        <li>Topical term or geographic name as entry elemen</li>
-      </ul>
+    <ul>
+      <li>Topical term or geographic name as entry elemen</li>
+    </ul>
     </p>
 
     <p>
       <b>700 - PERSONAL NAME</b>
-      <ul>
-        <li>Personal name</li>
-      </ul>
+    <ul>
+      <li>Personal name</li>
+    </ul>
     </p>
 
     <p>
-      <b>942  - ADDED ENTRY ELEMENTS (KOHA)</b>
-      <ul>
-        <li>Koha item type</li>
-        <br><b>Books</b>
-      </ul>
+      <b class="red"> * 942 -</b>
+      <b> ADDED ENTRY ELEMENTS (KOHA)</b>
+    <ul>
+      <li>Koha item type</li>
+      <br><b>Books</b>
+    </ul>
     </p>
-    
+
   </div>
 
 
@@ -197,16 +289,24 @@
       openWebsite("https://www.protoporia.gr/?subcats=Y&pcode_from_q=Y&pshort=Y&pfull=Y&pname=Y&pkeywords=Y&search_performed=Y&q=" + value + "&dispatch=products.search");
     }
     function openWebsite12() {
-    var value = document.getElementById("inputField").value;
-    openWebsite("https://metabook.gr/search/?query=" + value + "");
-  }
+      var value = document.getElementById("inputField").value;
+      openWebsite("https://metabook.gr/search/?query=" + value + "");
+    }
     function openWebsite13() {
-    var value = document.getElementById("inputField").value;
-    openWebsite("http://classify.oclc.org/classify2/ClassifyDemo?search-standnum-txt=" + value + "&startRec=0");
-  }
+      var value = document.getElementById("inputField").value;
+      openWebsite("http://classify.oclc.org/classify2/ClassifyDemo?search-standnum-txt=" + value + "&startRec=0");
+    }
     function openWebsite14() {
       var value = document.getElementById("inputField").value;
       openWebsite("http://192.168.5.218:8080/cgi-bin/koha/catalogue/search.pl?q=" + value + "&startRec=0");
+    }
+    function openWebsite16() {
+      var value = document.getElementById("inputField").value;
+      openWebsite("https://www.google.com/search?sxsrf=AB5stBjHgUQ71hCpdYRtKi1lNqFU2BjvBA:1688454784302&q=" + value + "&tbm=isch&sa=X&ved=2ahUKEwjPyoydwPT_AhWRTKQEHc6sA9gQ0pQJegQICRAB&biw=1920&bih=880&dpr=1");
+    }
+    function openWebsite17() {
+      var value = document.getElementById("inputField").value;
+      openWebsite("https://www.loc.gov/search/?all=True&q=" + value + "&st=list");
     }
     function openWebsite15() {
       var value = document.getElementById("inputField").value;
@@ -214,7 +314,7 @@
     }
 
     function copyText() {
-    // Get the text field
+      // Get the text field
       var value = document.getElementById("inputField").value;
 
       // Select the text field
@@ -227,9 +327,13 @@
       // // Alert the copied text
       // alert("Copied the text: " + value);
 
-    document.getElementById("lableField").value = value;
-      
+      document.getElementById("lableField").value = value;
     }
+
+    function copyText2() {
+      navigator.clipboard.writeText("Philips University");
+    }
+
     function openWebsite(baseUrl) {
       var url = baseUrl;
       window.open(url, "_blank");
