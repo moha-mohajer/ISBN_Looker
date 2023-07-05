@@ -2,6 +2,11 @@
 <html>
 
 <style>
+  .section {
+    font-size: x-large;
+    color: rgb(221, 4, 174);
+  }
+
   .blackStile {
     background-color: black;
     color: white
@@ -27,10 +32,13 @@
     color: red;
   }
 
-  .green{
-    color: green;
+  .green {
+    color: rgb(4, 224, 121);
   }
 
+  .blue {
+    color: rgb(6, 113, 175);
+  }
 </style>
 
 <head>
@@ -112,18 +120,22 @@
 
   <div id="labeledmarc" class="labeledmarc">
 
+    <b class="section">Section 0</b>
     <p>
       <b class="red">* 000 -</b>
       <b> LEADER</b>
+    <ul>
+      <li>fixed length control field <label class="blue"> (auto)</label></li>
+    </ul>
     </p>
 
     <p>
       <b class="red">* 003 -</b>
       <b> CONTROL NUMBER IDENTIFIER: </b>
     <ul>
-      <li>control field</li>
-      <br><b>Philips University</b>
-      <button onclick="copyText2()">Copy</button>
+      <li>control field <b>(<label class="blue"> Philips University</label>)</b> <button
+          onclick="copyText2()">Copy</button></li>
+
       </br>
     </ul>
     </p>
@@ -131,110 +143,155 @@
     <p>
       <b class="red">* 005 -</b>
       <b> DATE AND TIME OF LATEST TRANSACTION</b>
-  </p>
+    <ul>
+      <li>control field <label class="blue">(auto)</label></li>
+    </ul>
+    </p>
 
     <p>
       <b class="red">* 008 -</b>
       <b> FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION</b>
+    <ul>
+      <li>fixed length control field <label class="blue">(auto)</label></li>
+    </ul>
+    </p>
+
+    <p>
+      <b> 010 -</b>
+      <b> LIBRARY OF CONGRESS CONTROL NUMBER Delete this tag</b>
+    <ul>
+      <li> a - LC control number </li>
+    </ul>
     </p>
 
     <p>
       <b>020 - ISBN</b>
     <ul>
-      <li>International Standard Book Number</li>
+      <li>a - International Standard Book Number</li>
     </ul>
     </p>
 
     <p>
-      <b>040 - CATALOGING SOURCE</b>
+      <b>024 - OTHER STANDARD IDENTIFIER</b>
     <ul>
-      <li>Language of cataloging</li>
-      <li>Transcribing agency</li>
-      <b>Philips University</b></br>
+      <li> 2 - Source of number or code <b>( <label class="blue"> OCLC Number / Unique Identifier </label> )</b></li>
+      <li> a - Standard number or code <b>(Ex: <label class="blue"> 18715610 </label> )</b></li>
+      <li> q - Qualifying information <b>(Ex:  <label class="blue"> https://www.worldcat.org/title/18715610 </label> )</b></li>
+    </ul>
+    </p>
+
+    <p>
+      <b class="red ">* 040 - </b>
+      <b> CATALOGING SOURCE</b>
+    <ul>
+      <li> <label class="red">*c -</label> Transcribing agency <b>( <label class="blue"> Philips University </label> )</b>
+        <button onclick="copyText2()">Copy</button>
+      </li>
     </ul>
     </p>
 
     <p>
       <b>041 - LANGUAGE CODE</b>
+    <ul>
+      <li> a - Original cataloging agency <b>(<label class="blue"> eng </label>)</b> <button
+          onclick="copyText3()">Copy</button></li>
+    </ul>
+    </p>
+
+    <p>
+      <b>050 - LIBRARY OF CONGRESS CALL NUMBER</b>
+    <ul>
+      <li>a - Classification number</li>
+      <li>b - Item number</li>
+    </ul>
     </p>
 
     <p>
       <b>082 - DEWEY DECIMAL CLASSIFICATION NUMBER</b>
     <ul>
-      <li>Classification number</li>
+      <li>a - Classification number</li>
+      <li>b - Item number</li>
     </ul>
     </p>
 
+    <b class="section">Section 1</b>
     <p>
       <b>100 - MAIN ENTRY--PERSONAL NAME</b>
     <ul>
-      <li>Personal name</li>
+      <li>a - Personal name <b> ( SureName<label class="blue">,  </label> FirstName )</b></li>
     </ul>
     </p>
-
+    <b class="section">Section 2</b>
     <p>
       <b>245 - TITLE STATEMENT</b>
     <ul>
-      <li>Title</li>
-      <li>Statement of responsibility, etc. Author</li>
+      <li>a - Title <b> ( If b exist then use " <label class="blue"> : </label>" if not and c exist then use " <label
+            class="blue"> / </label> ")</b></li>
+      <li>b - Reminder of title ( If c exist the use "<label class="blue"> / </label> ")</li>
+      <li>c - Statement of responsibility, etc. <b> ( <label class="blue"> Author </label> )</b></li>
     </ul>
     </p>
 
     <p>
       <b>250 - EDITION STATEMENT</b>
     <ul>
-      <li>Edition statement</li>
+      <li>a - Edition statement</li>
     </ul>
     </p>
 
     <p>
       <b>260 - PUBLICATION, DISTRIBUTION, ETC</b>
     <ul>
-      <li>Name of publisher, distributor, etc.</li>
-      <li>lace of publication, distribution, etc.</li>
-      <li>Date of publication, distribution, etc</li>
+      <li>a - Place of publication, distribution, etc.<b> ( <label class="blue"> : </label> )</b></li>
+      <li>b - Name of publisher, distributor, etc.<b> ( <label class="blue"> , </label> )</b></li>
+      <li>c - Date of publication, distribution, etc</li>
     </ul>
     </p>
 
+    <b class="section">Section 3</b>
     <p>
       <b>300 - PHYSICAL DESCRIPTION</b>
     <ul>
-      <li>Extent</li>
-      <li>Dimensions</li>
+      <li>a - Extent <b> ( <label class="blue"> : </label> )</li>
+      <li>b - Other physical details <b> ( <label class="blue"> ; </label> )</li>
+      <li>c - Dimensions<b> ( <label class="blue"> . </label> )</li>
     </ul>
     </p>
 
+    <b class="section">Section 5</b>
     <p>
       <b class="green">500-541 -</b> <b> NOTE</b>
-      <ol>
-        <li><b class="green">500 -</b><b> GENERAL NOTE</b></li>
-        <li><b class="green">504 -</b><b> BIBLIOGRAPHY NOTE</b></li>
-        <li><b class="green">505 -</b><b> CONTENTS NOTE</b></li>
-        <li><b class="green">520 -</b><b> SUMMARY NOTE</b></li>
-        <li><b class="green">546 -</b><b> LANGUAGE NOTE</b></li>
-      </ol>
+    <ol>
+      <li><b class="green">500 - a - </b><b> GENERAL NOTE</b></li>
+      <li><b class="green">504 - a - </b><b> BIBLIOGRAPHY NOTE</b></li>
+      <li><b class="green">505 - a -</b><b> CONTENTS NOTE</b></li>
+      <li><b class="green">520 - a -</b><b> SUMMARY NOTE</b></li>
+      <li><b class="green">546 - a -</b><b> LANGUAGE NOTE</b></li>
+    </ol>
     </p>
 
+    <b class="section">Section 6</b>
     <p>
       <b>650 - SUBJECT ADDED ENTRY--TOPICAL TERM</b>
     <ul>
-      <li>Topical term or geographic name as entry elemen</li>
+      <li>a - Topical term or geographic name as entry elemen</li>
     </ul>
     </p>
 
+    <b class="section">Section 7</b>
     <p>
       <b>700 - PERSONAL NAME</b>
     <ul>
-      <li>Personal name</li>
+      <li>a - Personal name <b> ( SureName<label class="blue">,  </label> FirstName )</b></li>
     </ul>
     </p>
 
+    <b class="section">Section 9</b>
     <p>
       <b class="red"> * 942 -</b>
       <b> ADDED ENTRY ELEMENTS (KOHA)</b>
     <ul>
-      <li>Koha item type</li>
-      <br><b>Books</b>
+      <li>Koha item type <b>( <label class="blue">Books</label> )</b></li>
     </ul>
     </p>
 
@@ -334,6 +391,9 @@
       navigator.clipboard.writeText("Philips University");
     }
 
+    function copyText3() {
+      navigator.clipboard.writeText("eng");
+    }
     function openWebsite(baseUrl) {
       var url = baseUrl;
       window.open(url, "_blank");
