@@ -8,8 +8,8 @@
   }
 
   .blackStile {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0)
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255)
   }
 
   .center {
@@ -56,6 +56,8 @@
       <br><br>
       <input class="center" type="text" onfocus="this.value=''" id="inputField" placeholder="Enter a value" required>
       <button onclick="copyText()">Copy</button>
+      <button onclick="FivePlusTwo()" class="blackStile">5 + 2</button>
+
       <br>
       <label id="lableField"><b></b></label>
     </div>
@@ -176,7 +178,8 @@
     <ul>
       <li> 2 - Source of number or code <b>( <label class="blue"> OCLC Number / Unique Identifier </label> )</b></li>
       <li> a - Standard number or code <b>(Ex: <label class="blue"> 18715610 </label> )</b></li>
-      <li> q - Qualifying information <b>(Ex:  <label class="blue"> https://www.worldcat.org/title/18715610 </label> )</b></li>
+      <li> q - Qualifying information <b>(Ex: <label class="blue"> https://www.worldcat.org/title/18715610 </label>
+          )</b></li>
     </ul>
     </p>
 
@@ -184,7 +187,8 @@
       <b class="red ">* 040 - </b>
       <b> CATALOGING SOURCE</b>
     <ul>
-      <li> <label class="red">*c -</label> Transcribing agency <b>( <label class="blue"> Philips University </label> )</b>
+      <li> <label class="red">*c -</label> Transcribing agency <b>( <label class="blue"> Philips University </label>
+          )</b>
         <button onclick="copyText2()">Copy</button>
       </li>
     </ul>
@@ -211,7 +215,7 @@
     <ul>
       <li>2 - Edition number</li>
       <li>a - Classification number</li>
-      
+
     </ul>
     </p>
 
@@ -219,7 +223,7 @@
     <p>
       <b>100 - MAIN ENTRY--PERSONAL NAME</b>
     <ul>
-      <li>a - Personal name <b> ( SureName<label class="blue">,  </label> FirstName )</b></li>
+      <li>a - Personal name <b> ( SureName<label class="blue">, </label> FirstName )</b></li>
     </ul>
     </p>
     <b class="section">Section 2</b>
@@ -283,7 +287,7 @@
     <p>
       <b>700 - PERSONAL NAME</b>
     <ul>
-      <li>a - Personal name <b> ( SureName<label class="blue">,  </label> FirstName )</b></li>
+      <li>a - Personal name <b> ( SureName<label class="blue">, </label> FirstName )</b></li>
     </ul>
     </p>
 
@@ -356,7 +360,7 @@
     }
     function openWebsite14() {
       var value = document.getElementById("inputField").value;
-      openWebsite("http://192.168.5.218:8080/cgi-bin/koha/catalogue/search.pl?q=" + value + "&startRec=0");
+      openWebsite0("http://192.168.5.218:8080/cgi-bin/koha/catalogue/search.pl?q=" + value + "&startRec=0");
     }
     function openWebsite16() {
       var value = document.getElementById("inputField").value;
@@ -369,6 +373,14 @@
     function openWebsite15() {
       var value = document.getElementById("inputField").value;
       openWebsite("https://catalogue.bnf.fr");
+    }
+    function FivePlusTwo() {
+      openWebsite6();
+      openWebsite14();
+      openWebsite7();
+      openWebsite3();
+      openWebsite13();
+      openWebsite16();
     }
 
     function copyText() {
@@ -398,6 +410,10 @@
     function openWebsite(baseUrl) {
       var url = baseUrl;
       window.open(url, "_blank");
+    }
+    function openWebsite0(baseUrl) {
+      var url = baseUrl;
+      window.open(url,"","600","1000");
     }
   </script>
 
