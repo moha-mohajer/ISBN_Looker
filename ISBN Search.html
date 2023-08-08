@@ -51,7 +51,7 @@
   <!-- <form onsubmit="form_action();"> -->
   <form action="javascript:void(0);">
     <!-- <form action="javascript:"></form> -->
-
+    <button onclick="dublicate()">Dublicate</button>
     <div class="center">
       <br><br>
       <label for="inputField">Enter a ISBN: </label>
@@ -438,6 +438,11 @@
       document.getElementById("lableField").value = value;
     }
 
+    function dublicate(){
+      openWebsiteFullScreen("file:///C:/Users/mohaj.7808.20/OneDrive/Library/ISBN_Looker/ISBN_Looker/ISBN%20Search.html");
+
+    }
+
     function copyText2() {
       navigator.clipboard.writeText("Philips University");
     }
@@ -449,10 +454,11 @@
       var url = baseUrl;
       window.open(url, "_blank");
     }
-    function openWebsite0(baseUrl) {
+    function openWebsiteFullScreen(baseUrl) {
       var url = baseUrl;
-      window.open(url, "", "600", "1000");
+      window.open(url, "_blank", screen.width, screen.height);
     }
+
   </script>
 
 
