@@ -67,53 +67,58 @@
 
       <div class="center">
         <p><br><br>
-          <li><button type="button" onclick="openWebsite1()">Book Finder</button>
-            <button type="button" onclick="openWebsite6()">ISBN Finder</button>
-            <button type="button" onclick="openWebsite8()">Amazon</button>
-            <button type="button" onclick="openWebsite9()">Abe Books</button>
+          <li><button type="button" onclick="book_finder()">Book Finder</button>
+            <button type="button" onclick="isbn_finde()">ISBN Finder</button>
+            <button type="button" onclick="amazon_search()">Amazon</button>
+            <button type="button" onclick="abe_books()">Abe Books</button>
           </li>
         </p>
       </div>
 
       <div class="center">
         <p><br>
-          <li><button type="button" onclick="openWebsite14()">Our Koha</button></li>
+          <li><button type="button" onclick="local_koha_search()">Our Koha</button></li>
           <li><button type="button" onclick="ourLibrary()">Our Library</button></li>
         </p>
       </div>
 
       <div class="center">
         <p><br>
-          <li><button type="button" onclick="openWebsite7()">World Cat</button>
-            <button type="button" onclick="openWebsite3()">UCLA | UC Library</button>
-            <button type="button" onclick="openWebsite13()">DDC</button>
-            <button type="button" onclick="openWebsite5()">kohas</button>
+          <li>
+            <button type="button" onclick="world_cat()">World Cat</button>
+            <button type="button" onclick="ucla_search()">UCLA | UC Library</button>
+            <button type="button" onclick="find_ddc()">DDC</button>
+            <button type="button" onclick="ww_koha_search()">kohas</button>
           </li>
         </p>
       </div>
 
       <div class="center">
         <p><br>
-          <li><button type="button" onclick="openWebsite11()">protoporia.gr</button>
-            <button type="button" onclick="openWebsite12()">metabook.gr</button>
+          <li>
+            <button type="button" onclick="protoporia_search()">protoporia.gr</button>
+            <button type="button" onclick="metabook_search()">metabook.gr</button>
           </li>
         </p>
       </div>
 
       <div class="center">
         <p><br>
-          <li><button type="button" onclick="openWebsite10()">Google</button>
-            <button type="button" onclick="openWebsite16()">Google image</button>
-            <button type="button" onclick="openWebsite4()">google books</button>
+          <li>
+            <button type="button" onclick="google_search()">Google</button>
+            <button type="button" onclick="google_image_search()">Google image</button>
+            <button type="button" onclick="google_books_search()">google books</button>
           </li>
         </p><br>
       </div>
 
       <div class="center">
         <p>
-          <li><button type="button" onclick="openWebsite2()">LC Catalog</button>
-            <button type="button" onclick="openWebsite15()">www.bnf.fr</button>
-            <button type="button" onclick="openWebsite17()">LCC SRU</button>
+          <li>
+            <button type="button" onclick="lc_catalog()">LC Catalog</button>
+            <button type="button" onclick="bl_catalog()">BL Catalog</button>
+            <button type="button" onclick="bnf_catalog()">www.bnf.fr</button>
+            <button type="button" onclick="lc_sru_catalog()">LCC SRU</button>
           </li>
         </p><br>
       </div>
@@ -307,59 +312,59 @@
 
 
   <script>
-    function openWebsite1() {
+    function book_finder() {
       var value = document.getElementById("inputField").value;
       openWebsite("https://www.bookfinder.com/search/?keywords=" + value + "&currency=EUR&destination=cy&mode=isbn&il=en&classic=off&lang=en&st=sh&ac=qr&submit=");
     }
-    function openWebsite2() {
+    function lc_catalog() {
       var value = document.getElementById("inputField").value;
       openWebsite("https://catalog.loc.gov/vwebv/search?searchArg=" + value + "&searchCode=GKEY%5E*&searchType=0&recCount=25");
     }
-    function openWebsite3() {
+    function ucla_search() {
       var value = document.getElementById("inputField").value;
       openWebsite("https://search.library.ucla.edu/discovery/search?query=any,contains," + value + "&tab=Articles_books_more_slot&search_scope=ArticlesBooksMore&vid=01UCS_LAL:UCLA&offset=0");
     }
-    function openWebsite4() {
+    function google_books_search() {
       var value = document.getElementById("inputField").value;
       openWebsite("https://www.google.com.cy/search?tbm=bks&hl=en&q=" + value + "");
     }
-    function openWebsite5() {
+    function ww_koha_search() {
       var value = document.getElementById("inputField").value;
       openWebsite("https://www.google.com/search?q=koha+\"" + value + "\"&rlz=1C1GCEA_enCY1056CY1056&oq=ko&aqs=chrome.2.69i59l3j69i64j69i60l4.2257j0j9&sourceid=chrome&ie=UTF-8");
     }
-    function openWebsite6() {
+    function isbn_finde() {
       var value = document.getElementById("inputField").value;
       openWebsite("https://isbnsearch.org/isbn/" + value + "");
     }
-    function openWebsite7() {
+    function world_cat() {
       var value = document.getElementById("inputField").value;
       openWebsite("https://www.worldcat.org/search?q=" + value + "");
     }
-    function openWebsite8() {
+    function amazon_search() {
       var value = document.getElementById("inputField").value;
       openWebsite("https://www.amazon.com/s?k=" + value + "");
     }
-    function openWebsite9() {
+    function abe_books() {
       var value = document.getElementById("inputField").value;
       openWebsite("https://www.abebooks.com/servlet/SearchResults?kn=" + value + "&sts=t&cm_sp=SearchF-_-topnav-_-Results");
     }
-    function openWebsite10() {
+    function google_search() {
       var value = document.getElementById("inputField").value;
       openWebsite("https://www.google.com/search?q=" + value + "");
     }
-    function openWebsite11() {
+    function protoporia_search() {
       var value = document.getElementById("inputField").value;
       openWebsite("https://www.protoporia.gr/?subcats=Y&pcode_from_q=Y&pshort=Y&pfull=Y&pname=Y&pkeywords=Y&search_performed=Y&q=" + value + "&dispatch=products.search");
     }
-    function openWebsite12() {
+    function metabook_search() {
       var value = document.getElementById("inputField").value;
       openWebsite("https://metabook.gr/search/?query=" + value + "");
     }
-    function openWebsite13() {
+    function find_ddc() {
       var value = document.getElementById("inputField").value;
       openWebsite("http://classify.oclc.org/classify2/ClassifyDemo?search-standnum-txt=" + value + "&startRec=0");
     }
-    function openWebsite14() {
+    function local_koha_search() {
       var value = document.getElementById("inputField").value;
       openWebsite("http://10.0.40.218:8080/cgi-bin/koha/catalogue/search.pl?q=" + value + "&startRec=0");
     }
@@ -367,38 +372,33 @@
       var value = document.getElementById("inputField").value;
       openWebsite("https://library.philipsuni.ac.cy/cgi-bin/koha/opac-search.pl?idx=&q=" + value + "&startRec=0");
     }
-    function openWebsite16() {
+    function google_image_search() {
       var value = document.getElementById("inputField").value;
       openWebsite("https://www.google.com/search?sxsrf=AB5stBjHgUQ71hCpdYRtKi1lNqFU2BjvBA:1688454784302&q=" + value + "&tbm=isch&sa=X&ved=2ahUKEwjPyoydwPT_AhWRTKQEHc6sA9gQ0pQJegQICRAB&biw=1920&bih=880&dpr=1");
     }
-    function openWebsite17() {
+    function lc_sru_catalog() {
       var value = document.getElementById("inputField").value;
       openWebsite("https://www.loc.gov/search/?all=True&q=" + value + "&st=list");
     }
-    function openWebsite15() {
+    function bnf_catalog() {
       var value = document.getElementById("inputField").value;
       openWebsite("https://catalogue.bnf.fr");
     }
-    function FivePlusOne() {
+    function bl_catalog() {
       var value = document.getElementById("inputField").value;
-      setTimeout(function () {
-        window.open("https://www.bookfinder.com/search/?keywords=" + value + "&currency=EUR&destination=cy&mode=isbn&il=en&classic=off&lang=en&st=sh&ac=qr&submit=", "_blank");
-      }, 50);
-      setTimeout(function () {
-        window.open("https://www.google.com/search?sxsrf=AB5stBjHgUQ71hCpdYRtKi1lNqFU2BjvBA:1688454784302&q=" + value + "&tbm=isch&sa=X&ved=2ahUKEwjPyoydwPT_AhWRTKQEHc6sA9gQ0pQJegQICRAB&biw=1920&bih=880&dpr=1", "_blank");
-      }, 100);
-      setTimeout(function () {
-        window.open("https://www.worldcat.org/search?q=" + value + "", "_blank");
-      }, 200);
-      setTimeout(function () {
-        window.open("http://classify.oclc.org/classify2/ClassifyDemo?search-standnum-txt=" + value + "&startRec=0", "_blank");
-      }, 200);
-      setTimeout(function () {
-        window.open("https://search.library.ucla.edu/discovery/search?query=any,contains," + value + "&tab=Articles_books_more_slot&search_scope=ArticlesBooksMore&vid=01UCS_LAL:UCLA&offset=0", "_blank");
-      }, 200);
-      setTimeout(function () {
-        window.open("http://10.0.40.218:8080/cgi-bin/koha/catalogue/search.pl?q=" + value + "&startRec=0", "_blank");
-      }, 200);
+      window.open("https://explore.bl.uk/primo_library/libweb/action/search.do?mode=Basic&vid=BLVU1&vl(freeText0)=" + value + "&fn=search&tab=local_tab&", "_blank");
+    }
+
+
+
+    function FivePlusOne() {
+      setTimeout(book_finder(), 50);
+      setTimeout(google_image_search(), 50);
+      setTimeout(bl_catalog(), 50);
+      setTimeout(world_cat(), 50);
+      setTimeout(find_ddc(), 50);
+      setTimeout(ucla_search(), 50);
+      setTimeout(local_koha_search(), 50);
     }
 
     function copyText() {
