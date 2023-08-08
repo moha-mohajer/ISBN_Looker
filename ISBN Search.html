@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
- <!-- this is the work of mohammad mohajerany and all the right is belong to him -->
+<!-- this is the work of mohammad mohajerany and all the right is belong to him -->
 <style>
   .section {
     font-size: x-large;
@@ -47,16 +47,19 @@
 
 <body class="blackStile">
 
-  <form action="javascript:void(0);">
 
+  <!-- <form onsubmit="form_action();"> -->
+  <form action="javascript:void(0);">
+    <!-- <form action="javascript:"></form> -->
 
     <div class="center">
       <br><br>
       <label for="inputField">Enter a ISBN: </label>
       <br><br>
       <input class="center" type="text" onfocus="this.value=''" id="inputField" placeholder="Enter a value" required>
-      <button onclick="copyText()">Copy</button>
       <button onclick="quick_search()" class="blackStile">Quick search</button>
+      <input type="checkbox" id="auto" name="auto" value="Auto Quick search">
+      <button onclick="copyText()">Copy</button>
 
       <br>
       <label id="lableField"><b></b></label>
@@ -68,9 +71,9 @@
       <div class="center">
         <p>
           <button type="button" onclick="book_finder()">Book Finder</button>
-            <button type="button" onclick="isbn_finde()">ISBN Finder</button>
-            <button type="button" onclick="amazon_search()">Amazon</button>
-            <button type="button" onclick="abe_books()">Abe Books</button>
+          <button type="button" onclick="isbn_finde()">ISBN Finder</button>
+          <button type="button" onclick="amazon_search()">Amazon</button>
+          <button type="button" onclick="abe_books()">Abe Books</button>
         </p>
       </div>
 
@@ -85,34 +88,34 @@
 
       <div class="center">
         <p>
-            <button type="button" onclick="world_cat()">World Cat</button>
-            <button type="button" onclick="ucla_search()">UCLA | UC Library</button>
-            <button type="button" onclick="find_ddc()">DDC</button>
-            <button type="button" onclick="ww_koha_search()">kohas</button>
+          <button type="button" onclick="world_cat()">World Cat</button>
+          <button type="button" onclick="ucla_search()">UCLA | UC Library</button>
+          <button type="button" onclick="find_ddc()">DDC</button>
+          <button type="button" onclick="ww_koha_search()">kohas</button>
         </p>
       </div>
 
       <div class="center">
         <p>
-            <button type="button" onclick="protoporia_search()">protoporia.gr</button>
-            <button type="button" onclick="metabook_search()">metabook.gr</button>
+          <button type="button" onclick="protoporia_search()">protoporia.gr</button>
+          <button type="button" onclick="metabook_search()">metabook.gr</button>
         </p>
       </div>
 
       <div class="center">
         <p>
-            <button type="button" onclick="google_search()">Google</button>
-            <button type="button" onclick="google_image_search()">Google image</button>
-            <button type="button" onclick="google_books_search()">google books</button>
+          <button type="button" onclick="google_search()">Google</button>
+          <button type="button" onclick="google_image_search()">Google image</button>
+          <button type="button" onclick="google_books_search()">google books</button>
         </p><br>
       </div>
 
       <div class="center">
         <p>
-            <button type="button" onclick="lc_catalog()">LC Catalog</button>
-            <button type="button" onclick="bl_catalog()">BL Catalog</button>
-            <button type="button" onclick="bnf_catalog()">www.bnf.fr</button>
-            <button type="button" onclick="lc_sru_catalog()">LCC SRU</button>
+          <button type="button" onclick="lc_catalog()">LC Catalog</button>
+          <button type="button" onclick="bl_catalog()">BL Catalog</button>
+          <button type="button" onclick="bnf_catalog()">www.bnf.fr</button>
+          <button type="button" onclick="lc_sru_catalog()">LCC SRU</button>
         </p>
       </div>
 
@@ -305,6 +308,8 @@
 
 
   <script>
+
+
     function book_finder() {
       var value = document.getElementById("inputField").value;
       openWebsite("https://www.bookfinder.com/search/?keywords=" + value + "&currency=EUR&destination=cy&mode=isbn&il=en&classic=off&lang=en&st=sh&ac=qr&submit=");
@@ -375,7 +380,7 @@
     }
     function z39_50_or_sru_isbn_search() {
       var value = document.getElementById("inputField").value;
-      openWebsite("http://10.0.40.218:8080/cgi-bin/koha/cataloguing/z3950_search.pl?&frameworkcode=&isbn=" + value );
+      openWebsite("http://10.0.40.218:8080/cgi-bin/koha/cataloguing/z3950_search.pl?&frameworkcode=&isbn=" + value);
     }
     function bnf_catalog() {
       var value = document.getElementById("inputField").value;
@@ -389,20 +394,31 @@
       var value = document.getElementById("inputField").value;
       window.open("http://10.0.40.218:8080/cgi-bin/koha/cataloguing/addbiblio.pl");
     }
-    
+
 
 
 
     function quick_search() {
-      setTimeout(book_finder(), 50);
-      setTimeout(google_image_search(), 50);
-      setTimeout(bl_catalog(), 50);
-      setTimeout(world_cat(), 50);
-      setTimeout(find_ddc(), 50);
-      setTimeout(ucla_search(), 50);
-      // local search
-      setTimeout(add_new(), 50);
-      setTimeout(local_koha_search(), 50);
+      var auto = document.getElementById("auto").checked;
+      var value = document.getElementById("inputField").value;
+
+      navigator.clipboard.writeText(value);
+
+      document.getElementById("lableField").value = value;
+      document.getElementById("auto").checked = auto;
+
+      if (auto) {
+        setTimeout(book_finder(), 50);
+        setTimeout(google_image_search(), 50);
+        setTimeout(bl_catalog(), 50);
+        setTimeout(world_cat(), 50);
+        setTimeout(find_ddc(), 50);
+        setTimeout(ucla_search(), 50);
+        // local search
+        setTimeout(add_new(), 50);
+        setTimeout(local_koha_search(), 50);
+      
+      }
     }
 
     function copyText() {
