@@ -51,21 +51,23 @@
   <!-- <form onsubmit="form_action();"> -->
   <form action="javascript:void(0);">
     <!-- <form action="javascript:"></form> -->
-    <button onclick="dublicate()">Dublicate</button>
+
     <div class="center">
       <br><br>
       <label for="inputField">Enter a ISBN: </label>
       <br><br>
       <input class="center" type="text" onfocus="this.value=''" id="inputField" placeholder="Enter a value" required>
-      <button onclick="quick_search()" class="blackStile">Quick search</button>
-      <input type="checkbox" id="auto" name="auto" value="Auto Quick search">
+
+      <button onclick="auto_search()" id="lable" class="blackStile" value=" test"></button>
+
       <button onclick="copyText()">Copy</button>
+      <input type="checkbox" id="auto" name="auto" value="Auto Quick search">
+      <button onclick="quick_search()" class="blackStile">Quick search</button>
 
       <br>
       <label id="lableField"><b></b></label>
     </div>
-
-
+    <button onclick="dublicate()">Dublicate</button>
     <ul>
 
       <div class="center">
@@ -399,31 +401,39 @@
 
 
     function quick_search() {
+      setTimeout(book_finder(), 100);
+      setTimeout(google_image_search(), 150);
+      setTimeout(bl_catalog(), 200);
+      setTimeout(world_cat(), 250);
+      setTimeout(find_ddc(), 300);
+      setTimeout(ucla_search(), 350);
+      // local search
+      setTimeout(add_new(), 400);
+      setTimeout(local_koha_search(), 450);
+    }
+
+    function auto_search() {
       var auto = document.getElementById("auto").checked;
-      var value = document.getElementById("inputField").value;
-
-      navigator.clipboard.writeText(value);
-
-      document.getElementById("lableField").value = value;
-      document.getElementById("auto").checked = auto;
-
-      if (auto) {
-        setTimeout(book_finder(), 50);
-        setTimeout(google_image_search(), 50);
-        setTimeout(bl_catalog(), 50);
-        setTimeout(world_cat(), 50);
-        setTimeout(find_ddc(), 50);
-        setTimeout(ucla_search(), 50);
-        // local search
-        setTimeout(add_new(), 50);
-        setTimeout(local_koha_search(), 50);
-      
+      // document.getElementById("auto").checked = auto;
+      setTimeout(copyText(), 50)
+      if (auto && (lVal == 10 || lVal == 13)) {
+        setTimeout(quick_search(), 50);
       }
     }
 
     function copyText() {
       // Get the text field
-      var value = document.getElementById("inputField").value;
+      let value = document.getElementById("inputField").value;
+      lVal = value.length;
+
+      if (lVal == 10 || lVal == 13) {
+        document.getElementById("lable").style.color = "green";
+        document.getElementById("lable").innerHTML = value;
+      }
+      else {
+        document.getElementById("lable").style.color = "red";
+        document.getElementById("lable").innerHTML = lVal;
+      }
 
       // Select the text field
       // copyText.select();
@@ -435,11 +445,13 @@
       // // Alert the copied text
       // alert("Copied the text: " + value);
 
-      document.getElementById("lableField").value = value;
+      document.getElementById("inputField").value = value;
     }
 
-    function dublicate(){
-      openWebsiteFullScreen("file:///C:/Users/mohaj.7808.20/OneDrive/Library/ISBN_Looker/ISBN_Looker/ISBN%20Search.html");
+
+
+    function dublicate() {
+      openWebsite("file:///C:/Users/mohaj.7808.20/OneDrive/Library/ISBN_Looker/ISBN_Looker/ISBN%20Search.html");
 
     }
 
