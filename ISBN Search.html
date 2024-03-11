@@ -73,7 +73,8 @@
 
       <div class="center">
         <p>
-          <button type="button" onclick="book_finder()">Book Finder</button>
+          <input class="input" role="textbox" id="book_finder" value=01 contenteditable></input>
+          <button type="button" onclick="buttonAction('book_finder')">Book Finder</button>
           <button type="button" onclick="isbn_finde()">ISBN Finder</button>
           <button type="button" onclick="amazon_search()">Amazon</button>
           <button type="button" onclick="abe_books()">Abe Books</button>
@@ -303,129 +304,214 @@
     <ul>
       <li><b class="red"> * c - </b>Koha item type <b>( <label class="blue">Books</label> )</b></li>
     </ul>
-    </p>
+    </p>s
 
   </div>
 
-
-
-
   <script>
+    var userName = "Moha";
+    //var userName = "mohaj.7808.20";
+    
+    let iSBNFinderAdress ="file:///C:/Users/"+ userName +"/OneDrive/PHILIPS%20UNIVERSITY/Work/Library/ISBN_Looker/ISBN_Looker/ISBN%20Search.html";
 
+    let Koha_Address = "http://10.0.40.218:8080";
 
-    function book_finder() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("https://www.bookfinder.com/search/?keywords=" + value + "&currency=EUR&destination=cy&mode=isbn&il=en&classic=off&lang=en&st=sh&ac=qr&submit=");
-    }
-    function lc_catalog() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("https://catalog.loc.gov/vwebv/search?searchArg=" + value + "&searchCode=GKEY%5E*&searchType=0&recCount=25");
-    }
-    function ucla_search() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("https://search.library.ucla.edu/discovery/search?query=any,contains," + value + "&tab=Articles_books_more_slot&search_scope=ArticlesBooksMore&vid=01UCS_LAL:UCLA&offset=0");
-    }
-    function google_books_search() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("https://www.google.com.cy/search?tbm=bks&hl=en&q=" + value + "");
-    }
-    function ww_koha_search() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("https://www.google.com/search?q=koha+\"" + value + "\"&rlz=1C1GCEA_enCY1056CY1056&oq=ko&aqs=chrome.2.69i59l3j69i64j69i60l4.2257j0j9&sourceid=chrome&ie=UTF-8");
-    }
-    function isbn_finde() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("https://isbnsearch.org/isbn/" + value + "");
-    }
-    function world_cat() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("https://www.worldcat.org/search?q=" + value + "");
-    }
-    function amazon_search() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("https://www.amazon.com/s?k=" + value + "");
-    }
-    function abe_books() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("https://www.abebooks.com/servlet/SearchResults?kn=" + value + "&sts=t&cm_sp=SearchF-_-topnav-_-Results");
-    }
-    function google_search() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("https://www.google.com/search?q=" + value + "");
-    }
-    function protoporia_search() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("https://www.protoporia.gr/?subcats=Y&pcode_from_q=Y&pshort=Y&pfull=Y&pname=Y&pkeywords=Y&search_performed=Y&q=" + value + "&dispatch=products.search");
-    }
-    function metabook_search() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("https://metabook.gr/search/?query=" + value + "");
-    }
-    function find_ddc() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("http://classify.oclc.org/classify2/ClassifyDemo?search-standnum-txt=" + value + "&startRec=0");
-    }
-    function local_koha_search() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("http://10.0.40.218:8080/cgi-bin/koha/catalogue/search.pl?q=" + value + "&startRec=0");
-    }
-    function ourLibrary() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("https://library.philipsuni.ac.cy/cgi-bin/koha/opac-search.pl?idx=&q=" + value + "&startRec=0");
-    }
-    function google_image_search() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("https://www.google.com/search?sxsrf=AB5stBjHgUQ71hCpdYRtKi1lNqFU2BjvBA:1688454784302&q=" + value + "&tbm=isch&sa=X&ved=2ahUKEwjPyoydwPT_AhWRTKQEHc6sA9gQ0pQJegQICRAB&biw=1920&bih=880&dpr=1");
-    }
-    function lc_sru_catalog() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("https://www.loc.gov/search/?all=True&q=" + value + "&st=list");
-    }
-    function z39_50_or_sru_isbn_search() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("http://10.0.40.218:8080/cgi-bin/koha/cataloguing/z3950_search.pl?&frameworkcode=&isbn=" + value);
-    }
-    function bnf_catalog() {
-      var value = document.getElementById("inputField").value;
-      openWebsite("https://catalogue.bnf.fr");
-    }
-    function bl_catalog() {
-      var value = document.getElementById("inputField").value;
-      window.open("https://explore.bl.uk/primo_library/libweb/action/search.do?mode=Basic&vid=BLVU1&vl(freeText0)=" + value + "&fn=search&tab=local_tab&", "_blank");
-    }
-    function add_new() {
-      var value = document.getElementById("inputField").value;
-      window.open("http://10.0.40.218:8080/cgi-bin/koha/cataloguing/addbiblio.pl");
-    }
+    const lURLs = [];
 
+    lURLs.push({
+    name :"book_finder",
+    priority : 1,
+    fAddress : "https://www.bookfinder.com/search/?keywords=",
+    sAddress : "&st=sr&ac=qr&mode=basic&lang=en&destination=cy&currency=EUR&binding=*&publisher=&min_year=&max_year=&minprice=&maxprice=&classic=off&classic=off"
+    });
 
+    lURLs.push({
+    name : "lc_catalog",
+    priority : 0,
+    fAddress : "https://catalog.loc.gov/vwebv/search?searchArg=",
+    sAddress : "&searchCode=GKEY%5E*&searchType=0&recCount=25"
+    });
 
+    lURLs.push({
+    name : "ucla_search",
+    priority : 2,
+    fAddress : "https://search.library.ucla.edu/discovery/search?query=any,contains,",
+    sAddress : "&tab=Articles_books_more_slot&search_scope=ArticlesBooksMore&vid=01UCS_LAL:UCLA&offset=0"
+    }); 
+
+    lURLs.push({
+    name : "google_books_search",
+    priority : 0,
+    fAddress : "https://www.google.com.cy/search?tbm=bks&hl=en&q=",
+    sAddress : ""
+    });
+    
+    lURLs.push({
+    name : "ww_koha_search",
+    priority : 0,
+    fAddress : " https://www.google.com/search?q=koha+\"",
+    sAddress : "\"&rlz=1C1GCEA_enCY1056CY1056&oq=ko&aqs=chrome.2.69i59l3j69i64j69i60l4.2257j0j9&sourceid=chrome&ie=UTF-8"
+    });
+
+    lURLs.push({
+    name : "isbn_finder",
+    priority : 0,
+    fAddress : "https://isbnsearch.org/isbn/",
+    sAddress : ""
+    });
+
+    lURLs.push({
+    name : "world_ca",
+    priority : 3,
+    fAddress : "https://www.worldcat.org/search?q=",
+    sAddress : ""
+    });
+
+    lURLs.push({
+    name : "amazon_search",
+    priority : 0,
+    fAddress : "https://www.amazon.com/s?k=",
+    sAddress : ""
+    });
+
+    lURLs.push({
+    name : "abe_books",
+    priority : 0,
+    fAddress : "https://www.abebooks.com/servlet/SearchResults?kn=",
+    sAddress : "&sts=t&cm_sp=SearchF-_-topnav-_-Results"
+    });
+
+    
+    lURLs.push({
+    name : "google_search",
+    priority : 0,
+    fAddress : "https://www.google.com/search?q=",
+    sAddress : ""
+    });
+
+    lURLs.push({
+    name : "protoporia_search",
+    priority : 0,
+    fAddress : "https://www.protoporia.gr/?subcats=Y&pcode_from_q=Y&pshort=Y&pfull=Y&pname=Y&pkeywords=Y&search_performed=Y&q=",
+    sAddress : "&dispatch=products.search"
+    });
+
+    lURLs.push({
+    name : "metabook_search",
+    priority : 0,
+    fAddress : "https://metabook.gr/search/?query=",
+    sAddress : ""
+    });
+
+    lURLs.push({
+    name : "find_ddc",
+    priority : 0,
+    fAddress : "http://classify.oclc.org/classify2/ClassifyDemo?search-standnum-txt=",
+    sAddress : "&startRec=0"
+    });
+
+    lURLs.push({
+    name : "local_koha_search",
+    priority : 4,
+    fAddress : "/cgi-bin/koha/catalogue/search.pl?q=",
+    sAddress : "&startRec=0"
+    });
+
+    lURLs.push({
+    name : "ourLibrary",
+    priority : 0,
+    fAddress : "https://library.philipsuni.ac.cy/cgi-bin/koha/opac-search.pl?idx=&q=",
+    sAddress : "&startRec=0"
+    });
+    
+    lURLs.push({
+    name : "google_image_search",
+    priority : 0,
+    fAddress : "https://www.google.com/search?sxsrf=AB5stBjHgUQ71hCpdYRtKi1lNqFU2BjvBA:1688454784302&q=",
+    sAddress : "&tbm=isch&sa=X&ved=2ahUKEwjPyoydwPT_AhWRTKQEHc6sA9gQ0pQJegQICRAB&biw=1920&bih=880&dpr=1"
+    });
+    
+    lURLs.push({
+    name : "lc_sru_catalog",
+    priority : 0,
+    fAddress : "https://www.loc.gov/search/?all=True&q=",
+    sAddress : "&st=list"
+    });
+
+    lURLs.push({
+    name : "z39_50_or_sru_isbn_search",
+    priority : 0,
+    fAddress : Koha_Address + "/cgi-bin/koha/cataloguing/z3950_search.pl?&frameworkcode=&isbn=",
+    sAddress : ""
+    });
+
+    lURLs.push({
+    name : "bnf_catalog",
+    priority : 0,
+    fAddress : "https://catalogue.bnf.fr",
+    sAddress : ""
+    });
+    
+    lURLs.push({
+    name : "bl_catalog",
+    priority : 0,
+    fAddress : "https://explore.bl.uk/primo_library/libweb/action/search.do?mode=Basic&vid=BLVU1&vl(freeText0)=",
+    sAddress : "&fn=search&tab=local_tab&"
+    });
+    
+    lURLs.push({
+    name : "addNew",
+    priority : 0,
+    fAddress : Koha_Address + "/cgi-bin/koha/cataloguing/addbiblio.pl",
+    sAddress : ""
+    });
+
+    function openUrl( liURL) {
+      let value = document.getElementById("inputField").value;
+      window.open(liURL.fAddress + value + liURL.sAddress);
+      } 
+
+    function buttonAction(name) {
+      let liURL = lURLs.find(liURL => liURL.name === name);
+      openUrl(liURL);
+      } 
 
     function quick_search() {
-      setTimeout(book_finder(), 100);
-      setTimeout(google_image_search(), 150);
-      setTimeout(bl_catalog(), 200);
-      setTimeout(world_cat(), 250);
-      setTimeout(find_ddc(), 300);
-      setTimeout(ucla_search(), 350);
-      // local search
-      setTimeout(add_new(), 400);
-      setTimeout(local_koha_search(), 450);
+      setTimeout(copyText(),100);
+      reValuePrioritys();
+      
+      let delay = 300; 
+      let iIndex = 1;
+
+      //For descending order, use:
+      lURLs.sort((a, b) => parseFloat(a.priority) - parseFloat(b.priority));
+      
+      lURLs.forEach(liURL => {console.log(liURL);
+        if (liURL.priority == iIndex) {
+          iIndex++;
+          delay+=100
+          setTimeout(openUrl(liURL),delay);
+         }
+      });
     }
 
     function auto_search() {
       var auto = document.getElementById("auto").checked;
+      let value = document.getElementById("inputField").value;
+      var lVal = value.length;
       // document.getElementById("auto").checked = auto;
-      setTimeout(copyText(), 50)
+      setTimeout(copyText(), 100)
+
       if (auto && (lVal == 10 || lVal == 13)) {
-        setTimeout(quick_search(), 50);
+        setTimeout(quick_search(),200);
       }
     }
 
     function copyText() {
       // Get the text field
       let value = document.getElementById("inputField").value;
-      lVal = value.length;
+      var lVal = value.length;
+      
 
       if (lVal == 10 || lVal == 13) {
         document.getElementById("lable").style.color = "green";
@@ -436,28 +522,22 @@
         document.getElementById("lable").style.color = "red";
         document.getElementById("lable").innerHTML = lVal;
         document.getElementById("display").innerHTML = value;
-
       }
-
-      // Select the text field
-      // copyText.select();
-      // copyText.setSelectionRange(0, 99999); // For mobile devices
-
-      // Copy the text inside the text field
       navigator.clipboard.writeText(value);
-
-      // // Alert the copied text
-      // alert("Copied the text: " + value);
-
       document.getElementById("inputField").value = value;
     }
 
 
+    function reValuePrioritys() {
+      let sBook_finder = document.getElementById("book_finder").value;
+      let iBook_finder = parseFloat(sBook_finder);
+      lURLs[0].priority = iBook_finder; 
+      }
 
-    function dublicate() {
-      openWebsite("file:///C:/Users/mohaj.7808.20/OneDrive/Library/ISBN_Looker/ISBN_Looker/ISBN%20Search.html");
-
-    }
+      function dublicate() {
+        openWebsite(iSBNFinderAdress);
+      }
+    
 
     function copyText2() {
       navigator.clipboard.writeText("Philips University");
