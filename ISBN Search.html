@@ -73,53 +73,73 @@
 
       <div class="center">
         <p>
-          <input class="input" role="textbox" id="book_finder" value=01 contenteditable></input>
+          <input class="input" id="book_finder" value=1 size="1">
           <button type="button" onclick="buttonAction('book_finder')">Book Finder</button>
-          <button type="button" onclick="isbn_finde()">ISBN Finder</button>
-          <button type="button" onclick="amazon_search()">Amazon</button>
-          <button type="button" onclick="abe_books()">Abe Books</button>
+          <input class="input" id="isbn_finder" value=0 size="1">
+          <button type="button" onclick="buttonAction('isbn_finder')">ISBN Finder</button>
+          <input class="input" id="amazon_search" value=0 size="1">
+          <button type="button" onclick="buttonAction('amazon_search')">Amazon</button>
+          <input class="input" id="abe_books" value=0 size="1">
+          <button type="button" onclick="buttonAction('abe_books')">Abe Books</button>
         </p>
       </div>
 
       <div class="center">
         <p>
-          <button type="button" onclick="add_new()">Add New</button>
-          <button type="button" onclick="local_koha_search()">Our Koha</button>
-          <button type="button" onclick="ourLibrary()">Our Library</button>
-          <button type="button" onclick="z39_50_or_sru_isbn_search()">Z39.50/SRU</button>
+          <input class="input" id="addNew" value=0 size="1">
+          <button type="button" onclick="buttonAction('addNew')">Add New</button>
+          <input class="input" id="local_koha_search" value=4 size="1">
+          <button type="button" onclick="buttonAction('local_koha_search')">Our Koha</button>
+          <input class="input" id="ourLibrary" value=0 size="1">
+          <button type="button" onclick="buttonAction('ourLibrary')">Our Library</button>
+          <input class="input" id="z39_50_or_sru_isbn_search" value=0 size="1">
+          <button type="button" onclick="buttonAction('z39_50_or_sru_isbn_search')">Z39.50/SRU</button>
         </p>
       </div>
 
       <div class="center">
         <p>
-          <button type="button" onclick="world_cat()">World Cat</button>
-          <button type="button" onclick="ucla_search()">UCLA | UC Library</button>
-          <button type="button" onclick="find_ddc()">DDC</button>
-          <button type="button" onclick="ww_koha_search()">kohas</button>
+          <input class="input" id="world_cat" value=3 size="1">
+          <button type="button" onclick="buttonAction('world_cat')">World Cat</button>
+          <input class="input" id="ucla_search" value=2 size="1">
+          <button type="button" onclick="buttonAction('ucla_search')">UCLA | UC Library</button>
+          <input class="input" id="find_ddc" value=0 size="1">
+          <button type="button" onclick="buttonAction('find_ddc')">DDC</button>
+          <input class="input" id="ww_koha_search" value=0 size="1">
+          <button type="button" onclick="buttonAction('ww_koha_search')">kohas</button>
         </p>
       </div>
 
       <div class="center">
         <p>
-          <button type="button" onclick="protoporia_search()">protoporia.gr</button>
-          <button type="button" onclick="metabook_search()">metabook.gr</button>
+          <input class="input" id="protoporia_search" value=0 size="1">
+          <button type="button" onclick="buttonAction('protoporia_search')">protoporia.gr</button>
+          <input class="input" id="metabook_search" value=0 size="1">
+          <button type="button" onclick="buttonAction('metabook_search')">metabook.gr</button>
         </p>
       </div>
 
       <div class="center">
         <p>
-          <button type="button" onclick="google_search()">Google</button>
-          <button type="button" onclick="google_image_search()">Google image</button>
-          <button type="button" onclick="google_books_search()">google books</button>
+          <input class="input" id="google_search" value=0 size="1">
+          <button type="button" onclick="buttonAction('google_search')">Google</button>
+          <input class="input" id="google_image_search" value=0 size="1">
+          <button type="button" onclick="buttonAction('google_image_search')">Google image</button>
+          <input class="input" id="google_books_search" value=0 size="1">
+          <button type="button" onclick="buttonAction('google_books_search')">google books</button>
         </p><br>
       </div>
 
       <div class="center">
         <p>
-          <button type="button" onclick="lc_catalog()">LC Catalog</button>
-          <button type="button" onclick="bl_catalog()">BL Catalog</button>
-          <button type="button" onclick="bnf_catalog()">www.bnf.fr</button>
-          <button type="button" onclick="lc_sru_catalog()">LCC SRU</button>
+          <input class="input" id="lc_catalog" value=0 size="1">
+          <button type="button" onclick="buttonAction('lc_catalog')">LC Catalog</button>
+          <input class="input" id="bl_catalog" value=0 size="1">
+          <button type="button" onclick="buttonAction('bl_catalog')">BL Catalog</button>
+          <input class="input" id="bnf_catalog" value=0 size="1">
+          <button type="button" onclick="buttonAction('bnf_catalog')">www.bnf.fr</button>
+          <input class="input" id="lc_sru_catalog" value=0 size="1">
+          <button type="button" onclick="buttonAction('lc_sru_catalog')">LCC SRU</button>
         </p>
       </div>
 
@@ -361,7 +381,7 @@
     });
 
     lURLs.push({
-    name : "world_ca",
+    name : "world_cat",
     priority : 3,
     fAddress : "https://www.worldcat.org/search?q=",
     sAddress : ""
@@ -486,7 +506,7 @@
       //For descending order, use:
       lURLs.sort((a, b) => parseFloat(a.priority) - parseFloat(b.priority));
       
-      lURLs.forEach(liURL => {console.log(liURL);
+      lURLs.forEach(liURL => {
         if (liURL.priority == iIndex) {
           iIndex++;
           delay+=100
@@ -529,9 +549,12 @@
 
 
     function reValuePrioritys() {
-      let sBook_finder = document.getElementById("book_finder").value;
-      let iBook_finder = parseFloat(sBook_finder);
-      lURLs[0].priority = iBook_finder; 
+
+      lURLs.forEach(liURL => {console.log(liURL);
+        let sPriority = document.getElementById(liURL.name).value;
+        let iPriority = parseFloat(sPriority);
+        liURL.priority = iPriority;
+      });
       }
 
       function dublicate() {
