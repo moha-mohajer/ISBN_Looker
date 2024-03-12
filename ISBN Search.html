@@ -12,6 +12,17 @@
     color: rgb(255, 255, 255)
   }
 
+  .blackWhite {
+    background-color:#000000;
+    color: white;
+  }
+
+  .grayBlack{
+    background-color:#6e6b6b;
+    border-color: #2e2d2d;
+    color: rgb(255, 255, 255);
+  }
+
   .center {
     display: flex;
     justify-content: center;
@@ -73,73 +84,73 @@
 
       <div class="center">
         <p>
-          <input class="input" id="book_finder" value=1 size="1">
-          <button type="button" onclick="buttonAction('book_finder')">Book Finder</button>
-          <input class="input" id="isbn_finder" value=0 size="1">
-          <button type="button" onclick="buttonAction('isbn_finder')">ISBN Finder</button>
-          <input class="input" id="amazon_search" value=0 size="1">
-          <button type="button" onclick="buttonAction('amazon_search')">Amazon</button>
-          <input class="input" id="abe_books" value=0 size="1">
-          <button type="button" onclick="buttonAction('abe_books')">Abe Books</button>
+          <input class="input" id="book_finder" value=1 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('book_finder')">Book Finder</button>
+          <input class="input" id="isbn_finder" value=0 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('isbn_finder')">ISBN Finder</button>
+          <input class="input" id="amazon_search" value=0 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('amazon_search')">Amazon</button>
+          <input class="input" id="abe_books" value=0 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('abe_books')">Abe Books</button>
         </p>
       </div>
 
       <div class="center">
         <p>
-          <input class="input" id="addNew" value=0 size="1">
-          <button type="button" onclick="buttonAction('addNew')">Add New</button>
-          <input class="input" id="local_koha_search" value=4 size="1">
-          <button type="button" onclick="buttonAction('local_koha_search')">Our Koha</button>
-          <input class="input" id="ourLibrary" value=0 size="1">
-          <button type="button" onclick="buttonAction('ourLibrary')">Our Library</button>
-          <input class="input" id="z39_50_or_sru_isbn_search" value=0 size="1">
-          <button type="button" onclick="buttonAction('z39_50_or_sru_isbn_search')">Z39.50/SRU</button>
+          <input class="input" id="addNew" value=0 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('addNew')">Add New</button>
+          <input class="input" id="local_koha_search" value=4 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('local_koha_search')">Our Koha</button>
+          <input class="input" id="ourLibrary" value=0 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('ourLibrary')">Our Library</button>
+          <input class="input" id="z39_50_or_sru_isbn_search" value=0 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('z39_50_or_sru_isbn_search')">Z39.50/SRU</button>
         </p>
       </div>
 
       <div class="center">
         <p>
-          <input class="input" id="world_cat" value=3 size="1">
-          <button type="button" onclick="buttonAction('world_cat')">World Cat</button>
-          <input class="input" id="ucla_search" value=2 size="1">
-          <button type="button" onclick="buttonAction('ucla_search')">UCLA | UC Library</button>
-          <input class="input" id="find_ddc" value=0 size="1">
-          <button type="button" onclick="buttonAction('find_ddc')">DDC</button>
-          <input class="input" id="ww_koha_search" value=0 size="1">
-          <button type="button" onclick="buttonAction('ww_koha_search')">kohas</button>
+          <input class="input" id="world_cat" value=3 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('world_cat')">World Cat</button>
+          <input class="input" id="ucla_search" value=2 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('ucla_search')">UCLA | UC Library</button>
+          <input class="input" id="find_ddc" value=0 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('find_ddc')">DDC</button>
+          <input class="input" id="ww_koha_search" value=0 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('ww_koha_search')">kohas</button>
         </p>
       </div>
 
       <div class="center">
         <p>
-          <input class="input" id="protoporia_search" value=0 size="1">
-          <button type="button" onclick="buttonAction('protoporia_search')">protoporia.gr</button>
-          <input class="input" id="metabook_search" value=0 size="1">
-          <button type="button" onclick="buttonAction('metabook_search')">metabook.gr</button>
+          <input class="input" id="protoporia_search" value=0 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('protoporia_search')">protoporia.gr</button>
+          <input class="input" id="metabook_search" value=0 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('metabook_search')">metabook.gr</button>
         </p>
       </div>
 
       <div class="center">
         <p>
-          <input class="input" id="google_search" value=0 size="1">
-          <button type="button" onclick="buttonAction('google_search')">Google</button>
-          <input class="input" id="google_image_search" value=0 size="1">
-          <button type="button" onclick="buttonAction('google_image_search')">Google image</button>
-          <input class="input" id="google_books_search" value=0 size="1">
-          <button type="button" onclick="buttonAction('google_books_search')">google books</button>
+          <input class="input" id="google_search" value=0 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('google_search')">Google</button>
+          <input class="input" id="google_image_search" value=0 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('google_image_search')">Google image</button>
+          <input class="input" id="google_books_search" value=0 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('google_books_search')">google books</button>
         </p><br>
       </div>
 
       <div class="center">
         <p>
-          <input class="input" id="lc_catalog" value=0 size="1">
-          <button type="button" onclick="buttonAction('lc_catalog')">LC Catalog</button>
-          <input class="input" id="bl_catalog" value=0 size="1">
-          <button type="button" onclick="buttonAction('bl_catalog')">BL Catalog</button>
-          <input class="input" id="bnf_catalog" value=0 size="1">
-          <button type="button" onclick="buttonAction('bnf_catalog')">www.bnf.fr</button>
-          <input class="input" id="lc_sru_catalog" value=0 size="1">
-          <button type="button" onclick="buttonAction('lc_sru_catalog')">LCC SRU</button>
+          <input class="input" id="lc_catalog" value=0 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('lc_catalog')">LC Catalog</button>
+          <input class="input" id="bl_catalog" value=0 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('bl_catalog')">BL Catalog</button>
+          <input class="input" id="bnf_catalog" value=0 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('bnf_catalog')">www.bnf.fr</button>
+          <input class="input" id="lc_sru_catalog" value=0 size="1" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('lc_sru_catalog')">LCC SRU</button>
         </p>
       </div>
 
