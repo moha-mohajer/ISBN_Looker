@@ -13,12 +13,12 @@
   }
 
   .blackWhite {
-    background-color:#000000;
+    background-color: #000000;
     color: white;
   }
 
-  .grayBlack{
-    background-color:#6e6b6b;
+  .grayBlack {
+    background-color: #6e6b6b;
     border-color: #2e2d2d;
     color: rgb(255, 255, 255);
   }
@@ -41,6 +41,7 @@
 
   .red {
     color: red;
+    background-color: black;
   }
 
   .green {
@@ -69,10 +70,10 @@
       <br><br>
       <input class="center" type="text" onfocus="this.value=''" id="inputField" placeholder="Enter a value" required>
 
-      <button onclick="auto_search()" id="lable" class="blackStile" value=" test"></button>
+      <button onclick="auto_search()" id="lable" value="Auto Quick search" class="blackStile"></button>
 
       <button onclick="copyText()">Copy</button>
-      <input type="checkbox" id="auto" name="auto" value="Auto Quick search">
+      <input type="checkbox" id="auto" name="auto" value="Auto Quick search" checked>
       <button onclick="quick_search()" class="blackStile">Quick search</button>
 
       <br>
@@ -84,72 +85,92 @@
 
       <div class="center">
         <p>
-          <input class="input" id="book_finder" value=1 size="1" size="1" class="blackWhite">
+          <input class="red" id="book_finder" value=1 size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('book_finder')">Book Finder</button>
-          <input class="input" id="isbn_finder" value=0 size="1" size="1" class="blackWhite">
+          <input class="red" id="isbn_finder" value="" size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('isbn_finder')">ISBN Finder</button>
-          <input class="input" id="amazon_search" value=0 size="1" size="1" class="blackWhite">
+          <input class="red" id="amazon_search" value="" size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('amazon_search')">Amazon</button>
-          <input class="input" id="abe_books" value=0 size="1" size="1" class="blackWhite">
+          <input class="red" id="abe_books" value="" size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('abe_books')">Abe Books</button>
         </p>
       </div>
 
       <div class="center">
         <p>
-          <input class="input" id="addNew" value=0 size="1" size="1" class="blackWhite">
+          <input class="red" id="addNew" value="" size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('addNew')">Add New</button>
-          <input class="input" id="local_koha_search" value=4 size="1" size="1" class="blackWhite">
+          <input class="red" id="local_koha_search" value=5 size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('local_koha_search')">Our Koha</button>
-          <input class="input" id="ourLibrary" value=0 size="1" size="1" class="blackWhite">
+          <input class="red" id="ourLibrary" value="" size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('ourLibrary')">Our Library</button>
-          <input class="input" id="z39_50_or_sru_isbn_search" value=0 size="1" size="1" class="blackWhite">
-          <button type="button" class="grayBlack" onclick="buttonAction('z39_50_or_sru_isbn_search')">Z39.50/SRU</button>
+          <input class="red" id="z39_50_or_sru_isbn_search" value="" size="1" class="blackWhite">
+          <button type="button" class="grayBlack"
+            onclick="buttonAction('z39_50_or_sru_isbn_search')">Z39.50/SRU</button>
         </p>
       </div>
 
       <div class="center">
         <p>
-          <input class="input" id="world_cat" value=3 size="1" size="1" class="blackWhite">
+          <input class="red" id="world_cat" value=4 size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('world_cat')">World Cat</button>
-          <input class="input" id="ucla_search" value=2 size="1" size="1" class="blackWhite">
+          <input class="red" id="ucla_search" value=3 size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('ucla_search')">UCLA | UC Library</button>
-          <input class="input" id="find_ddc" value=0 size="1" size="1" class="blackWhite">
+          <input class="red" id="find_ddc" value="" size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('find_ddc')">DDC</button>
-          <input class="input" id="ww_koha_search" value=0 size="1" size="1" class="blackWhite">
+          <input class="red" id="librarything" value=2 size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('librarything')">librarything</button>
+          <input class="red" id="ww_koha_search" value="" size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('ww_koha_search')">kohas</button>
         </p>
       </div>
 
       <div class="center">
         <p>
-          <input class="input" id="protoporia_search" value=0 size="1" size="1" class="blackWhite">
+          <input class="red" id="protoporia_search" value="" size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('protoporia_search')">protoporia.gr</button>
-          <input class="input" id="metabook_search" value=0 size="1" size="1" class="blackWhite">
+          <input class="red" id="metabook_search" value="" size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('metabook_search')">metabook.gr</button>
+          <input class="red" id="penbook_search" value="" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('penbook_search')">penbook.gr</button>
         </p>
       </div>
 
       <div class="center">
         <p>
-          <input class="input" id="google_search" value=0 size="1" size="1" class="blackWhite">
+          <input class="red" id="CyprusUni" value="" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('cypruslibrar')">Koha Cyprus libraries</button>
+          <input class="red" id="EuropeanUni" value="" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('CyprusUni')">CyprusUni libraries</button>
+          <input class="red" id="cypruslibrar" value="" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('EuropeanUni')">Koha EUCyprus</button>
+          <input class="red" id="UNIC" value="" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('UNIC')">UNIC</button>
+          <input class="red" id="Uclan" value="" size="1" class="blackWhite">
+          <button type="button" class="grayBlack" onclick="buttonAction('Uclan')">Uclan</button>
+        </p><br>
+      </div>
+
+      <div class="center">
+        <p>
+          <input class="red" id="google_search" value="" size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('google_search')">Google</button>
-          <input class="input" id="google_image_search" value=0 size="1" size="1" class="blackWhite">
+          <input class="red" id="google_image_search" value="" size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('google_image_search')">Google image</button>
-          <input class="input" id="google_books_search" value=0 size="1" size="1" class="blackWhite">
+          <input class="red" id="google_books_search" value="" size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('google_books_search')">google books</button>
         </p><br>
       </div>
 
       <div class="center">
         <p>
-          <input class="input" id="lc_catalog" value=0 size="1" size="1" class="blackWhite">
+          <input class="red" id="lc_catalog" value="" size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('lc_catalog')">LC Catalog</button>
-          <input class="input" id="bl_catalog" value=0 size="1" size="1" class="blackWhite">
+          <input class="red" id="bl_catalog" value="" size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('bl_catalog')">BL Catalog</button>
-          <input class="input" id="bnf_catalog" value=0 size="1" size="1" class="blackWhite">
+          <input class="red" id="bnf_catalog" value="" size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('bnf_catalog')">www.bnf.fr</button>
-          <input class="input" id="lc_sru_catalog" value=0 size="1" size="1" class="blackWhite">
+          <input class="red" id="lc_sru_catalog" value="" size="1" class="blackWhite">
           <button type="button" class="grayBlack" onclick="buttonAction('lc_sru_catalog')">LCC SRU</button>
         </p>
       </div>
@@ -342,187 +363,239 @@
   <script>
     //var userName = "Moha";
     var userName = "mohaj.7808.20";
-    
-    let iSBNFinderAdress ="file:///C:/Users/"+ userName +"/OneDrive/PHILIPS%20UNIVERSITY/Work/Library/ISBN_Looker/ISBN_Looker/ISBN%20Search.html";
+
+    let iSBNFinderAdress = "file:///C:/Users/" + userName + "/OneDrive/PHILIPS%20UNIVERSITY/Work/Library/ISBN_Looker/ISBN_Looker/ISBN%20Search.html";
 
     let Koha_Address = "http://10.0.40.218:8080";
 
     const lURLs = [];
 
     lURLs.push({
-    name :"book_finder",
-    priority : 1,
-    fAddress : "https://www.bookfinder.com/search/?keywords=",
-    sAddress : "&st=sr&ac=qr&mode=basic&lang=en&destination=cy&currency=EUR&binding=*&publisher=&min_year=&max_year=&minprice=&maxprice=&classic=off&classic=off"
+      name: "book_finder",
+      priority: 1,
+      fAddress: "https://www.bookfinder.com/search/?keywords=",
+      sAddress: "&st=sr&ac=qr&mode=basic&lang=en&destination=cy&currency=EUR&binding=*&publisher=&min_year=&max_year=&minprice=&maxprice=&classic=off&classic=off"
     });
 
     lURLs.push({
-    name : "lc_catalog",
-    priority : 0,
-    fAddress : "https://catalog.loc.gov/vwebv/search?searchArg=",
-    sAddress : "&searchCode=GKEY%5E*&searchType=0&recCount=25"
+      name: "lc_catalog",
+      priority: 0,
+      fAddress: "https://catalog.loc.gov/vwebv/search?searchArg=",
+      sAddress: "&searchCode=GKEY%5E*&searchType=0&recCount=25"
     });
 
     lURLs.push({
-    name : "ucla_search",
-    priority : 2,
-    fAddress : "https://search.library.ucla.edu/discovery/search?query=any,contains,",
-    sAddress : "&tab=Articles_books_more_slot&search_scope=ArticlesBooksMore&vid=01UCS_LAL:UCLA&offset=0"
-    }); 
-
-    lURLs.push({
-    name : "google_books_search",
-    priority : 0,
-    fAddress : "https://www.google.com.cy/search?tbm=bks&hl=en&q=",
-    sAddress : ""
-    });
-    
-    lURLs.push({
-    name : "ww_koha_search",
-    priority : 0,
-    fAddress : " https://www.google.com/search?q=koha+\"",
-    sAddress : "\"&rlz=1C1GCEA_enCY1056CY1056&oq=ko&aqs=chrome.2.69i59l3j69i64j69i60l4.2257j0j9&sourceid=chrome&ie=UTF-8"
+      name: "ucla_search",
+      priority: 3,
+      fAddress: "https://search.library.ucla.edu/discovery/search?query=any,contains,",
+      sAddress: "&tab=Articles_books_more_slot&search_scope=ArticlesBooksMore&vid=01UCS_LAL:UCLA&offset=0"
     });
 
     lURLs.push({
-    name : "isbn_finder",
-    priority : 0,
-    fAddress : "https://isbnsearch.org/isbn/",
-    sAddress : ""
+      name: "google_books_search",
+      priority: 0,
+      fAddress: "https://www.google.com.cy/search?tbm=bks&hl=en&q=",
+      sAddress: ""
     });
 
     lURLs.push({
-    name : "world_cat",
-    priority : 3,
-    fAddress : "https://www.worldcat.org/search?q=",
-    sAddress : ""
+      name: "ww_koha_search",
+      priority: 0,
+      fAddress: " https://www.google.com/search?q=koha+\"",
+      sAddress: "\"&rlz=1C1GCEA_enCY1056CY1056&oq=ko&aqs=chrome.2.69i59l3j69i64j69i60l4.2257j0j9&sourceid=chrome&ie=UTF-8"
     });
 
     lURLs.push({
-    name : "amazon_search",
-    priority : 0,
-    fAddress : "https://www.amazon.com/s?k=",
-    sAddress : ""
+      name: "isbn_finder",
+      priority: 0,
+      fAddress: "https://isbnsearch.org/isbn/",
+      sAddress: ""
     });
 
     lURLs.push({
-    name : "abe_books",
-    priority : 0,
-    fAddress : "https://www.abebooks.com/servlet/SearchResults?kn=",
-    sAddress : "&sts=t&cm_sp=SearchF-_-topnav-_-Results"
-    });
-
-    
-    lURLs.push({
-    name : "google_search",
-    priority : 0,
-    fAddress : "https://www.google.com/search?q=",
-    sAddress : ""
+      name: "world_cat",
+      priority: 4,
+      fAddress: "https://www.worldcat.org/search?q=",
+      sAddress: ""
     });
 
     lURLs.push({
-    name : "protoporia_search",
-    priority : 0,
-    fAddress : "https://www.protoporia.gr/?subcats=Y&pcode_from_q=Y&pshort=Y&pfull=Y&pname=Y&pkeywords=Y&search_performed=Y&q=",
-    sAddress : "&dispatch=products.search"
+      name: "amazon_search",
+      priority: 0,
+      fAddress: "https://www.amazon.com/s?k=",
+      sAddress: ""
     });
 
     lURLs.push({
-    name : "metabook_search",
-    priority : 0,
-    fAddress : "https://metabook.gr/search/?query=",
-    sAddress : ""
+      name: "abe_books",
+      priority: 0,
+      fAddress: "https://www.abebooks.com/servlet/SearchResults?kn=",
+      sAddress: "&sts=t&cm_sp=SearchF-_-topnav-_-Results"
+    });
+
+
+    lURLs.push({
+      name: "google_search",
+      priority: 0,
+      fAddress: "https://www.google.com/search?q=",
+      sAddress: ""
     });
 
     lURLs.push({
-    name : "find_ddc",
-    priority : 0,
-    fAddress : "http://classify.oclc.org/classify2/ClassifyDemo?search-standnum-txt=",
-    sAddress : "&startRec=0"
+      name: "protoporia_search",
+      priority: 0,
+      fAddress: "https://www.protoporia.gr/?subcats=Y&pcode_from_q=Y&pshort=Y&pfull=Y&pname=Y&pkeywords=Y&search_performed=Y&q=",
+      sAddress: "&dispatch=products.search"
     });
 
     lURLs.push({
-    name : "local_koha_search",
-    priority : 4,
-    fAddress : "/cgi-bin/koha/catalogue/search.pl?q=",
-    sAddress : "&startRec=0"
+      name: "metabook_search",
+      priority: 0,
+      fAddress: "https://metabook.gr/search/?query=",
+      sAddress: ""
     });
 
     lURLs.push({
-    name : "ourLibrary",
-    priority : 0,
-    fAddress : "https://library.philipsuni.ac.cy/cgi-bin/koha/opac-search.pl?idx=&q=",
-    sAddress : "&startRec=0"
-    });
-    
-    lURLs.push({
-    name : "google_image_search",
-    priority : 0,
-    fAddress : "https://www.google.com/search?sxsrf=AB5stBjHgUQ71hCpdYRtKi1lNqFU2BjvBA:1688454784302&q=",
-    sAddress : "&tbm=isch&sa=X&ved=2ahUKEwjPyoydwPT_AhWRTKQEHc6sA9gQ0pQJegQICRAB&biw=1920&bih=880&dpr=1"
-    });
-    
-    lURLs.push({
-    name : "lc_sru_catalog",
-    priority : 0,
-    fAddress : "https://www.loc.gov/search/?all=True&q=",
-    sAddress : "&st=list"
+      name: "find_ddc",
+      priority: 0,
+      fAddress: "http://classify.oclc.org/classify2/ClassifyDemo?search-standnum-txt=",
+      sAddress: "&startRec=0"
     });
 
     lURLs.push({
-    name : "z39_50_or_sru_isbn_search",
-    priority : 0,
-    fAddress : Koha_Address + "/cgi-bin/koha/cataloguing/z3950_search.pl?&frameworkcode=&isbn=",
-    sAddress : ""
+      name: "local_koha_search",
+      priority: 5,
+      fAddress: Koha_Address + "/cgi-bin/koha/catalogue/search.pl?q=",
+      sAddress: "&startRec=0"
     });
 
     lURLs.push({
-    name : "bnf_catalog",
-    priority : 0,
-    fAddress : "https://catalogue.bnf.fr",
-    sAddress : ""
-    });
-    
-    lURLs.push({
-    name : "bl_catalog",
-    priority : 0,
-    fAddress : "https://explore.bl.uk/primo_library/libweb/action/search.do?mode=Basic&vid=BLVU1&vl(freeText0)=",
-    sAddress : "&fn=search&tab=local_tab&"
-    });
-    
-    lURLs.push({
-    name : "addNew",
-    priority : 0,
-    fAddress : Koha_Address + "/cgi-bin/koha/cataloguing/addbiblio.pl",
-    sAddress : ""
+      name: "ourLibrary",
+      priority: 0,
+      fAddress: "https://library.philipsuni.ac.cy/cgi-bin/koha/opac-search.pl?idx=&q=",
+      sAddress: "&startRec=0"
     });
 
-    function openUrl( liURL) {
+    lURLs.push({
+      name: "google_image_search",
+      priority: 0,
+      fAddress: "https://www.google.com/search?sxsrf=AB5stBjHgUQ71hCpdYRtKi1lNqFU2BjvBA:1688454784302&q=",
+      sAddress: "&tbm=isch&sa=X&ved=2ahUKEwjPyoydwPT_AhWRTKQEHc6sA9gQ0pQJegQICRAB&biw=1920&bih=880&dpr=1"
+    });
+
+    lURLs.push({
+      name: "lc_sru_catalog",
+      priority: 0,
+      fAddress: "https://www.loc.gov/search/?all=True&q=",
+      sAddress: "&st=list"
+    });
+
+    lURLs.push({
+      name: "z39_50_or_sru_isbn_search",
+      priority: 0,
+      fAddress: Koha_Address + "/cgi-bin/koha/cataloguing/z3950_search.pl?&frameworkcode=&isbn=",
+      sAddress: ""
+    });
+
+    lURLs.push({
+      name: "bnf_catalog",
+      priority: 0,
+      fAddress: "https://catalogue.bnf.fr",
+      sAddress: ""
+    });
+
+    lURLs.push({
+      name: "bl_catalog",
+      priority: 0,
+      fAddress: "https://explore.bl.uk/primo_library/libweb/action/search.do?mode=Basic&vid=BLVU1&vl(freeText0)=",
+      sAddress: "&fn=search&tab=local_tab&"
+    });
+
+    lURLs.push({
+      name: "addNew",
+      priority: 0,
+      fAddress: Koha_Address + "/cgi-bin/koha/cataloguing/addbiblio.pl",
+      sAddress: ""
+    });
+
+    lURLs.push({
+      name: "librarything",
+      priority: 2,
+      fAddress: "https://www.librarything.com/search.php?search=",
+      sAddress: "&searchtype=newwork_titles&sortchoice=0"
+    });
+
+    lURLs.push({
+      name: "penbook_search",
+      priority: 0,
+      fAddress: "https://www.penbook.gr/search?q=",
+      sAddress: "&cat=1"
+    });
+
+    lURLs.push({
+      name: "cypruslibrar",
+      priority: 0,
+      fAddress: "https://biblio.cypruslibrary.gov.cy/cgi-bin/koha/opac-search.pl?idx=&q=",
+      sAddress: "&weight_search=1"
+    });
+
+    lURLs.push({
+      name: "CyprusUni",
+      priority: 0,
+      fAddress: "https://cypruslibraries.ac.cy/search/?searchtype=i&SORT=D&searcharg=",
+      sAddress: "&searchscope=2"
+    });
+
+    lURLs.push({
+      name: "EuropeanUni",
+      priority: 0,
+      fAddress: "https://onlinelibrary.euc.ac.cy/cgi-bin/koha/opac-search.pl?idx=&q=9780070169876",
+      sAddress: "&weight_search=1"
+    });
+
+    lURLs.push({
+      name: "UNIC",
+      priority: 0,
+      fAddress: "https://primo.unic.ac.cy/discovery/search?query=any,contains,",
+      sAddress: "&tab=default_tab&search_scope=MyInst_and_CI&vid=357IC_INST:357IC&offset=0&fn=search"
+    });
+
+    lURLs.push({
+      name: "Uclan",
+      priority: 0,
+      fAddress: "https://librarysearch.uclan.ac.uk/discovery/search?query=any,contains,",
+      sAddress: "&tab=Everything&search_scope=MyInst_and_CI&vid=44UOCL_INST:44UOCL_V1&offset=0"
+    });
+
+    function openUrl(liURL) {
       let value = document.getElementById("inputField").value;
+      if (value == 0) {
+        value = document.getElementById("display").innerHTML;
+      }
       window.open(liURL.fAddress + value + liURL.sAddress);
-      } 
+    }
 
     function buttonAction(name) {
       let liURL = lURLs.find(liURL => liURL.name === name);
       openUrl(liURL);
-      } 
+    }
 
     function quick_search() {
-      setTimeout(copyText(),100);
+      setTimeout(copyText(), 100);
       reValuePrioritys();
-      
-      let delay = 300; 
+
+      let delay = 300;
       let iIndex = 1;
 
       //For descending order, use:
       lURLs.sort((a, b) => parseFloat(a.priority) - parseFloat(b.priority));
-      
+
       lURLs.forEach(liURL => {
         if (liURL.priority == iIndex) {
           iIndex++;
-          delay+=100
-          setTimeout(openUrl(liURL),delay);
-         }
+          delay += 100
+          setTimeout(openUrl(liURL), delay);
+        }
       });
     }
 
@@ -534,7 +607,7 @@
       setTimeout(copyText(), 100)
 
       if (auto && (lVal == 10 || lVal == 13)) {
-        setTimeout(quick_search(),200);
+        setTimeout(quick_search(), 200);
       }
     }
 
@@ -542,7 +615,7 @@
       // Get the text field
       let value = document.getElementById("inputField").value;
       var lVal = value.length;
-      
+
 
       if (lVal == 10 || lVal == 13) {
         document.getElementById("lable").style.color = "green";
@@ -561,17 +634,21 @@
 
     function reValuePrioritys() {
 
-      lURLs.forEach(liURL => {console.log(liURL);
-        let sPriority = document.getElementById(liURL.name).value;
-        let iPriority = parseFloat(sPriority);
+      lURLs.forEach(liURL => {
+        console.log(liURL);
+        let iPriority = 0;
+        if (document.getElementById(liURL.name).value) {
+          let sPriority = document.getElementById(liURL.name).value
+          iPriority = parseFloat(sPriority);
+        }
         liURL.priority = iPriority;
       });
-      }
+    }
 
-      function dublicate() {
-        openWebsite(iSBNFinderAdress);
-      }
-    
+    function dublicate() {
+      openWebsite(iSBNFinderAdress);
+    }
+
 
     function copyText2() {
       navigator.clipboard.writeText("Philips University");
